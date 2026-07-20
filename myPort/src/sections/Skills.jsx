@@ -1,89 +1,62 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  {
-    category: "Languages",
-    items: ["C++", "Python", "JavaScript", "SQL"],
-  },
-  {
-    category: "Frontend",
-    items: ["React", "Tailwind CSS", "Vite", "Redux Toolkit"],
-  },
-  {
-    category: "Backend",
-    items: ["Node.js", "Express.js", "REST APIs"],
-  },
-  {
-    category: "AI / ML",
-    items: [
-      "FAISS",
-      "Gemini API",
-      "Sentence Transformers",
-      "Streamlit",
-    ],
-  },
-  {
-    category: "Databases",
-    items: ["MongoDB", "MySQL", "Appwrite"],
-  },
-  {
-    category: "Tools",
-    items: ["Git", "GitHub", "Postman", "VS Code", "PyTest"],
-  },
+  "C++",
+  "Python",
+  "JavaScript",
+  "React",
+  "Tailwind CSS",
+  "Node.js",
+  "Express.js",
+  "MongoDB",
+  "MySQL",
+  "FAISS",
+  "Streamlit",
+  "Gemini API",
+  "Git",
+  "GitHub",
+  "Redux",
+  "REST APIs",
 ];
 
 function Skills() {
   return (
-    <section
-      id="skills"
-      className="mx-auto max-w-7xl px-6 py-28"
-    >
-      <motion.h2
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="mb-4 text-4xl font-bold"
-      >
-        Skills
-      </motion.h2>
+    <section id="skills" className="py-32">
+      <div className="mx-auto max-w-7xl px-6">
 
-      <motion.p
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-        viewport={{ once: true }}
-        className="mb-14 max-w-3xl text-lg text-slate-600 dark:text-slate-400"
-      >
-        Technologies and tools I use to build scalable web applications,
-        AI-powered solutions, and efficient software.
-      </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="font-semibold uppercase tracking-[0.3em] text-blue-500"
+        >
+          Skills
+        </motion.p>
 
-      <div className="grid gap-8 md:grid-cols-2">
-        {skills.map((skill, index) => (
-          <motion.div
-            key={skill.category}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.08 }}
-            viewport={{ once: true }}
-            className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm dark:border-slate-800 dark:bg-[#111111]"
-          >
-            <h3 className="mb-6 text-xl font-semibold">
-              {skill.category}
-            </h3>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-4 text-5xl font-black"
+        >
+          Technologies I work with.
+        </motion.h2>
 
-            <div className="flex flex-wrap gap-3">
-              {skill.items.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-600 transition hover:scale-105 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-300"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+        <div className="mt-16 flex flex-wrap gap-5">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill}
+              initial={{ opacity: 0, scale: .8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: index * .03 }}
+              viewport={{ once: true }}
+              className="rounded-full border border-slate-300 bg-white px-7 py-3 font-medium shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-500 hover:bg-blue-500 hover:text-white dark:border-slate-700 dark:bg-[#111111]"
+            >
+              {skill}
+            </motion.div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

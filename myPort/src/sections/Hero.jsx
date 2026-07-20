@@ -1,60 +1,60 @@
 import { ArrowRight, Download } from "lucide-react";
+import { FaGithub, FaLinkedin, FaCode } from "react-icons/fa";
+import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 
 function Hero() {
   return (
     <section
       id="home"
-      className="mx-auto flex min-h-[90vh] max-w-7xl items-center px-6"
+      className="relative flex min-h-screen items-center overflow-hidden px-6"
     >
-      <div className="max-w-3xl">
+      <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/20 blur-[130px]" />
+
+      <div className="relative mx-auto max-w-7xl">
         <motion.p
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-4 text-lg font-medium text-blue-500"
+          className="mb-4 text-blue-500"
         >
           Hello, I'm
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-5xl font-extrabold leading-tight md:text-7xl"
+          className="text-6xl font-black leading-none md:text-8xl"
         >
-          Juhi Ahuja
+          JUHI
+          <br />
+          AHUJA
         </motion.h1>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mt-4 text-2xl font-semibold text-slate-600 dark:text-slate-400 md:text-3xl"
-        >
-          AI Developer • Full Stack Developer • Competitive Programmer
-        </motion.h2>
+        <div className="mt-8 text-2xl font-semibold text-blue-500 md:text-4xl">
+          <TypeAnimation
+            sequence={[
+              "AI Developer",
+              1500,
+              "Full Stack Developer",
+              1500,
+              "Competitive Programmer",
+              1500,
+            ]}
+            wrapper="span"
+            repeat={Infinity}
+          />
+        </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-8 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-400"
-        >
-          I build AI-powered applications, scalable web solutions, and enjoy
-          solving challenging algorithmic problems. Currently pursuing B.Tech in
-          Computer Science at IIIT Surat.
-        </motion.p>
+        <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-400">
+          Building intelligent software using AI, modern web technologies,
+          and scalable backend systems.
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mt-10 flex flex-wrap gap-4"
-        >
+        <div className="mt-10 flex flex-wrap gap-4">
           <a
             href="#projects"
-            className="flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+            className="flex items-center gap-2 rounded-full bg-blue-600 px-7 py-4 font-semibold text-white transition hover:scale-105 hover:bg-blue-700"
           >
             View Projects
             <ArrowRight size={18} />
@@ -62,12 +62,27 @@ function Hero() {
 
           <a
             href="/resume.pdf"
-            className="flex items-center gap-2 rounded-xl border border-slate-300 px-6 py-3 font-semibold transition hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-900"
+            download="Juhi_Ahuja_Resume.pdf"
+            className="flex items-center gap-2 rounded-full border border-slate-300 px-7 py-4 font-semibold transition hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-900"
           >
-            Download Resume
+            Resume
             <Download size={18} />
           </a>
-        </motion.div>
+        </div>
+
+        <div className="mt-12 flex gap-6 text-2xl">
+          <a href="https://github.com/juh101">
+            <FaGithub className="transition hover:text-blue-500" />
+          </a>
+
+          <a href="https://www.linkedin.com/in/juhia2006/">
+            <FaLinkedin className="transition hover:text-blue-500" />
+          </a>
+
+          <a href="https://leetcode.com/u/juhi2006/">
+            <FaCode className="transition hover:text-blue-500" />
+          </a>
+        </div>
       </div>
     </section>
   );
